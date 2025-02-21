@@ -1,3 +1,4 @@
+using System.Text;
 using System.Text.Json;
 using IDistributedCacheRedisApp.Web.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -24,7 +25,11 @@ public class ProductsController(IDistributedCache distributedCache) : Controller
         };
 
         var jsonProduct = JsonSerializer.Serialize(product);
-        await distributedCache.SetStringAsync("product:2", jsonProduct, cacheOptions);
+        var byteProduct = Encoding.UTF8.GetBytes(jsonProduct);
+        
+        await distributedCache.SetAsync("product:3", byteProduct, cacheOptions);
+        
+        // await distributedCache.SetStringAsync("product:2", jsonProduct, cacheOptions);
         return View();
     }
 
