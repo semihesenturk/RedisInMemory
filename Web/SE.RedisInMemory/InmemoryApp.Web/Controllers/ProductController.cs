@@ -12,7 +12,7 @@ public class ProductController(IMemoryCache memoryCache) : Controller
         {
             var options = new MemoryCacheEntryOptions
             {
-                AbsoluteExpiration = DateTime.Now.AddMinutes(1),
+                AbsoluteExpiration = DateTime.Now.AddMinutes(5),
                 SlidingExpiration = TimeSpan.FromSeconds(10),
                 Priority = CacheItemPriority.High
             };
