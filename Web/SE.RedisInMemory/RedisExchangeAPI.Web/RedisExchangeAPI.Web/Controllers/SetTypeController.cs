@@ -7,7 +7,7 @@ namespace RedisExchangeAPI.Web.Controllers;
 public class SetTypeController(RedisService redisService) : Controller
 {
     private readonly IDatabase _db = redisService.GetDatabase(2);
-    private string _listKey = "hashNames";
+    private string _listKey = "setNames";
 
     // GET
     public async Task<IActionResult> Index()
