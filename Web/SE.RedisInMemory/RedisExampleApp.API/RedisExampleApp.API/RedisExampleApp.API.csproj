@@ -14,7 +14,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
+      <ProjectReference Include="..\..\RedisExampleApp.Cache\RedisExampleApp.Cache\RedisExampleApp.Cache.csproj" />
     </ItemGroup>
 
 </Project>
